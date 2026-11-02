@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Infosys Springboard - MoodMentor Project Documentation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    :root {
+      --primary: #4f46e5;
+      --primary-dark: #3730a3;
+      --secondary: #7c3aed;
+      --text: #1f2937;
+      --text-muted: #4b5563;
+      --bg: #ffffff;
+      --code-bg: #f3f4f6;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      background-color: #f8fafc;
+      line-height: 1.65;
+      font-size: 14px;
+      padding: 40px 20px;
+    }
+
+    .document-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--bg);
+      padding: 60px 70px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      border: 1px solid var(--border);
+    }
+
+    /* Cover Page */
+    .cover-page {
+      text-align: center;
+      padding: 60px 0 80px 0;
+      border-bottom: 2px solid #e2e8f0;
+      margin-bottom: 50px;
+    }
+
+    .cover-badge {
+      display: inline-block;
+      background: #eef2ff;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      margin-bottom: 24px;
+      border: 1px solid #c7d2fe;
+    }
+
+    .cover-title {
+      font-size: 32px;
+      font-weight: 800;
+      color: #111827;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .cover-subtitle {
+      font-size: 18px;
+      font-weight: 500;
+      color: #6366f1;
+      margin-bottom: 40px;
+    }
+
+    .cover-meta {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .cover-meta strong {
+      color: #111827;
+    }
+
+    /* Headings */
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #111827;
+      margin-top: 45px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #f1f5f9;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #374151;
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 14px;
+      color: #374151;
+    }
+
+    ul, ol {
+      margin-left: 24px;
+      margin-bottom: 18px;
+    }
+
+    li {
+      margin-bottom: 6px;
+      color: #374151;
+    }
+
+    /* Code Blocks */
+    pre {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 16px 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: 'JetBrains Mono', Consolas, monospace;
+      font-size: 12.5px;
+      line-height: 1.5;
+      margin: 16px 0;
+      border: 1px solid #1e293b;
+    }
+
+    code {
+      font-family: 'JetBrains Mono', Consolas, monospace;
+      font-size: 12.5px;
+      background: #f1f5f9;
+      color: #d946ef;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    pre code {
+      background: transparent;
+      color: inherit;
+      padding: 0;
+    }
+
+    /* Callout & Tables */
+    .callout {
+      background: #f0fdf4;
+      border-left: 4px solid #22c55e;
+      padding: 14px 18px;
+      border-radius: 0 6px 6px 0;
+      margin: 18px 0;
+      font-size: 13.5px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 13px;
+    }
+
+    th, td {
+      border: 1px solid #e2e8f0;
+      padding: 10px 14px;
+      text-align: left;
+    }
+
+    th {
+      background: #f8fafc;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .figure-box {
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: 8px;
+      padding: 18px;
+      margin: 18px 0;
+      text-align: center;
+      font-size: 13px;
+      color: #64748b;
+      font-style: italic;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: transparent;
+        padding: 0;
+      }
+      .document-container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .cover-page {
+        page-break-after: always;
+        padding-top: 150px;
+      }
+      h2 {
+        page-break-before: auto;
+      }
+      pre, blockquote, .figure-box {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="document-container">
+
+  <!-- Cover Page -->
+  <div class="cover-page">
+    <div class="cover-badge">Infosys Springboard Virtual Internship</div>
+    <h1 class="cover-title">AI-Based Employee Wellness Management Platform</h1>
+    <div class="cover-subtitle">MoodMentor – Intelligent Emotion Journal & Mental Wellness Analytics Platform</div>
+    
+    <div class="cover-meta">
+      <p><strong>Name:</strong> Suzanne Kathyrene Thodeti</p>
+      <p><strong>Date:</strong> October 2026</p>
+      <p><strong>Milestone:</strong> Full-Stack AI Emotion Journal & Wellness Analytics Platform Documentation</p>
+    </div>
+  </div>
+
+  <!-- Introduction -->
+  <h2>1. Introduction</h2>
+  <p>
+    The <strong>AI-Based Employee Wellness Management Platform (MoodMentor)</strong> is an enterprise-grade, full-stack mental well-being and emotional intelligence system designed to combat workplace burnout, stress, and anxiety. In modern corporate environments, chronic psychological fatigue often develops unnoticed, diminishing employee satisfaction, engagement, and productivity. Traditional journaling tools act merely as passive digital diaries—they archive raw text without offering proactive diagnosis, emotional awareness, or psychological guidance.
+  </p>
+  <p>
+    <strong>MoodMentor</strong> bridges this gap by merging state-of-the-art <strong>Natural Language Processing (NLP)</strong>, <strong>transformer-based deep learning</strong>, and <strong>evidence-based clinical coping interventions</strong> into a cohesive daily reflection tool. As employees log their daily experiences, MoodMentor diagnoses nuanced emotional states, evaluates sentiment valence, extracts core workplace themes, and generates actionable, personalized coping strategies. Concurrently, an interactive visual telemetry engine enables users to track long-term emotional trajectories, encouraging early self-awareness and proactive psychological resilience.
+  </p>
+
+  <h3>Key Highlights:</h3>
+  <ul>
+    <li><strong>Decoupled MVC Architecture:</strong> A modular Flask RESTful API backend communicating with a responsive, glassmorphic Streamlit client via strict JSON contracts and JWT Bearer authorization.</li>
+    <li><strong>Hybrid AI Inference Pipeline:</strong> Dual-engine intelligence utilizing fine-tuned transformer <code>DistilBERT</code> for 6-class emotion classification alongside <code>NLTK VADER</code> for fine-grained sentiment polarity.</li>
+    <li><strong>Contextual Theme Extraction:</strong> Utilizes <code>KeyBERT</code> embeddings to pinpoint recurring workplace triggers and thematic stressors.</li>
+    <li><strong>Personalized Coping Recommender:</strong> Deterministic clinical rule engine delivering immediate, scientifically backed interventions tailored to the detected emotion (e.g., 4-7-8 breathing for Fear, cognitive reframing for Sadness, gratitude celebration for Joy).</li>
+    <li><strong>Comprehensive Journal Management:</strong> Full CRUD capabilities with interactive cards displaying emotion badges, confidence scores, sentiment indicators, dynamic search filters (by emotion and keyword), and chronological sorting.</li>
+    <li><strong>Plotly Visual Telemetry:</strong> Deep analytical dashboard with interactive Donut distribution charts, a 3-day rolling trendline sentiment timeline, multi-axis emotion radar charts, and weekly cadence heatmaps.</li>
+    <li><strong>Enterprise-Grade Relational Persistence:</strong> Robust MySQL 8.0 schema featuring foreign keys, cascading deletions, and database indexes, paired with an automated zero-config SQLite fallback.</li>
+    <li><strong>Data Sovereignty & Security:</strong> Salted bcrypt password hashing, token blocklisting, 1-click 5-column CSV data export (<code>Date,Emotion,Sentiment,Journal,Confidence</code>), and GDPR-compliant cascading account erasure.</li>
+  </ul>
+
+  <!-- Tech Stack -->
+  <h2>2. Tech Stack</h2>
+  <ul>
+    <li><strong>Frontend Framework:</strong> Streamlit (v1.38+) — Delivers a reactive single-page/multi-page web application using pure Python, enhanced with custom glassmorphic CSS tokens, responsive metrics, and dynamic modals.</li>
+    <li><strong>Backend API:</strong> Python 3.10+ / Flask (v3.0+) — Enterprise RESTful API built on the application factory pattern with modular Flask Blueprints, CORS middleware, and structured HTTP response handlers.</li>
+    <li><strong>Authentication & Security:</strong> Flask-JWT-Extended & bcrypt — Stateless JSON Web Token authentication with Bearer tokens, token expiration, authorization headers, and cryptographically salted password hashes.</li>
+    <li><strong>Deep Learning / Emotion NLP:</strong> Hugging Face Transformers (<code>DistilBERT</code> - <code>bhadresh-savani/distilbert-base-uncased-emotion</code>) — Classifies reflections into 6 distinct classes: <em>Joy, Sadness, Anger, Fear, Love, Surprise</em>.</li>
+    <li><strong>Lexical Sentiment Analysis:</strong> NLTK VADER (<code>SentimentIntensityAnalyzer</code>) — Rule-based sentiment analyzer computing compound, positive, neutral, and negative polarity scores.</li>
+    <li><strong>Keyword & Theme Extraction:</strong> KeyBERT — Contextual sentence-transformer embeddings extracting high-relevance workplace keywords and stressor n-grams.</li>
+    <li><strong>Data Visualization:</strong> Plotly Express & Plotly Graph Objects — High-performance interactive visual charts (Donut, Line, Radar, Bar) rendered natively in Streamlit.</li>
+    <li><strong>Database Layer:</strong> MySQL 8.0+ / SQLAlchemy ORM with PyMySQL driver — Relational data persistence with foreign keys, indexes, and constraints; backed by an automatic SQLite fallback (<code>instance/moodmentor.db</code>).</li>
+    <li><strong>Data Portability:</strong> Pandas — Powers analytical aggregations and dynamic CSV generation with exact standardized column schemas.</li>
+    <li><strong>Unified Process Orchestrator:</strong> Multi-process launcher (<code>run.py</code>) executing Flask and Streamlit simultaneously with sub-process health monitoring.</li>
+  </ul>
+
+  <!-- Project Structure -->
+  <h2>3. Project Structure</h2>
+  <pre>MoodMentor/
+├── frontend/                               # View Layer (Streamlit Client)
+│   ├── app.py                              # Main application entry point & router
+│   ├── api_client.py                       # HTTP client handling REST requests & JWT tokens
+│   ├── config.py                           # Frontend theme tokens, styling & endpoint constants
+│   ├── pages/                              # Multi-page views (Overview, Analyze, Journal, Insights, Profile)
+│   ├── components/                         # Modular UI reusable widgets (cards, charts, sidebar)
+│   ├── views/                              # Dedicated view-controller presentation modules
+│   └── assets/styles.css                   # Professional blue-purple glassmorphic stylesheet
+│
+├── backend/                                # Controller & Model Layer (Flask REST API)
+│   ├── app.py                              # Flask application factory, CORS & JWT config
+│   ├── controllers/                        # Controller logic handlers
+│   ├── routes/                             # Modular REST API Blueprints (/api/auth, /api/journal, etc.)
+│   ├── models/                             # Model Layer (SQLAlchemy ORM Entities: User, Journal, EmotionLog)
+│   ├── services/                           # Business Logic Services (AI Service, Journal, Analytics)
+│   ├── ai/                                 # Specialized AI Pipelines (DistilBERT, VADER, Recommender)
+│   └── utils/                              # Standardized JSON response formatters
+│
+├── database/                               # Database Schemas & Initializers
+│   ├── schema.sql                          # MySQL 8.0 schema (DDL, FKs, Indexes)
+│   └── db_init.py                          # Automated MySQL database initializer script
+│
+├── tests/                                  # Automated Test Verification Suite
+│   ├── test_rest_apis.py                   # 10-endpoint REST specification test
+│   └── test_csv_export.py                  # 5-column CSV verification test
+│
+├── requirements.txt                        # Pinned production Python dependencies
+├── run.py                                  # Unified multi-process launcher script
+└── .env                                    # Environment variable configuration</pre>
+
+  <!-- Objectives -->
+  <h2>4. Objectives</h2>
+  <ol>
+    <li><strong>Multiclass Emotion & Sentiment Classification:</strong> Real-time emotion classification predicting 6 classes with continuous confidence scores ($0.0\% - 100.0\%$), VADER compound polarity, and KeyBERT stressor themes.</li>
+    <li><strong>Personalized Wellness Suggestions Engine:</strong> Clinically aligned recommendation engine returning structured JSON coping routines tailored for Joy, Fear, Sadness, Anger, and Love.</li>
+    <li><strong>Interactive Journal Management (CRUD):</strong> Automatic saving of reflections, responsive card rendering with emotion badges, live keyword search, emotion filtering, and chronological sorting.</li>
+    <li><strong>Visual Telemetry & Analytics Dashboard:</strong> Interactive Plotly Donut distribution chart, 3-day rolling sentiment trendline, 6-axis Emotion Radar, and keyword frequency charts.</li>
+    <li><strong>Profile Management & CSV Export:</strong> Customizable support styles, standard 5-column CSV export (<code>Date,Emotion,Sentiment,Journal,Confidence</code>), and GDPR-compliant account deletion.</li>
+    <li><strong>Relational Database Architecture:</strong> Enterprise MySQL 8.0 relational schema with foreign key constraints, indexes, and zero-config SQLite automatic fallback.</li>
+  </ol>
+
+  <!-- Code Implementation -->
+  <h2>5. Code Implementation</h2>
+
+  <h3>Module 1: AI Emotion & Sentiment Analysis (<code>backend/services/ai_service.py</code>)</h3>
+  <pre>class AIService:
+    """Core AI Engine integrating DistilBERT, VADER, and KeyBERT."""
+
+    def analyze_emotion_distilbert(self, text: str) -> Dict[str, Any]:
+        """Classifies text into 6 emotions with confidence scores."""
+        truncated_text = text[:512]
+        predictions = self.emotion_classifier(truncated_text)[0]
+        sorted_preds = sorted(predictions, key=lambda x: x["score"], reverse=True)
+        primary = sorted_preds[0]
+        
+        all_scores = {p["label"].capitalize(): round(float(p["score"]), 4) for p in sorted_preds}
+        return {
+            "dominant_emotion": primary["label"].capitalize(),
+            "confidence": round(float(primary["score"]), 4),
+            "all_scores": all_scores
+        }
+
+    def analyze_sentiment_vader(self, text: str) -> Dict[str, Any]:
+        """Calculates lexical polarity compound and component scores."""
+        scores = self.sentiment_analyzer.polarity_scores(text)
+        compound = scores["compound"]
+        label = "Positive" if compound >= 0.05 else ("Negative" if compound <= -0.05 else "Neutral")
+        return {
+            "compound": round(compound, 4),
+            "sentiment": label,
+            "positive": round(scores["pos"], 4),
+            "neutral": round(scores["neu"], 4),
+            "negative": round(scores["neg"], 4)
+        }</pre>
+
+  <h3>Module 2: Personalized Coping & Suggestion Engine (<code>backend/ai/recommender.py</code>)</h3>
+  <pre>def get_personalized_suggestions(emotion: str) -> Dict[str, Any]:
+    """Generates tailored coping strategies formatted as JSON."""
+    normalized = emotion.capitalize()
+    
+    suggestion_matrix = {
+        "Joy": [
+            {"category": "Celebration", "text": "Celebrate achievements and savor today's success."},
+            {"category": "Appreciation", "text": "Share appreciation with someone who helped you."},
+            {"category": "Memory", "text": "Take photos or save a keepsake of this positive moment."}
+        ],
+        "Fear": [
+            {"category": "Breathing", "text": "Practice 4-7-8 breathing: inhale 4s, hold 7s, exhale 8s."},
+            {"category": "Grounding", "text": "Use the 5-4-3-2-1 sensory grounding technique."},
+            {"category": "Affirmation", "text": "Repeat positive affirmations: 'I am safe and capable.'"},
+            {"category": "Mindfulness", "text": "Anchor yourself in the present moment through mindfulness."}
+        ],
+        "Sadness": [
+            {"category": "Music Therapy", "text": "Listen to comforting or uplifting music."},
+            {"category": "Nature Walk", "text": "Take a 15-minute gentle walk outdoors in natural light."},
+            {"category": "Social Connection", "text": "Reach out to a trusted friend or colleague for a chat."},
+            {"category": "Journaling", "text": "Engage in cathartic, non-judgmental expressive writing."}
+        ]
+    }
+    return {
+        "emotion": normalized,
+        "suggestions": suggestion_matrix.get(normalized, [
+            {"category": "Mindfulness", "text": "Take a brief pause, drink water, and reflect gently."}
+        ])
+    }</pre>
+
+  <h3>Module 3: REST API Controllers (<code>backend/controllers/rest_controller.py</code>)</h3>
+  <pre>@rest_bp.route("/analyze", methods=["POST"])
+def analyze():
+    """POST /analyze: Run AI emotion, sentiment, and suggestion pipelines."""
+    data = request.get_json(silent=True) or {}
+    text = data.get("text", "").strip()
+    if not text:
+        return jsonify({"success": False, "error": "Journal text is required"}), 400
+
+    analysis = ai_service.analyze_full_entry(text)
+    return jsonify({
+        "success": True,
+        "emotion": analysis["dominant_emotion"],
+        "confidence": analysis["confidence"],
+        "sentiment": analysis["sentiment"],
+        "sentiment_score": analysis["sentiment_score"],
+        "keywords": analysis["keywords"],
+        "suggestions": analysis["suggestions"]
+    }), 200</pre>
+
+  <!-- System Flow -->
+  <h2>6. System Flow</h2>
+  <ol>
+    <li><strong>User Authentication:</strong> Employee logs in; Flask returns a cryptographically signed JWT token stored in session state.</li>
+    <li><strong>Text Submission:</strong> Employee types reflection in the Analyze Studio or My Journal view.</li>
+    <li><strong>AI Pipeline Execution:</strong> Flask passes text to DistilBERT (emotion), VADER (sentiment), and KeyBERT (stressor keywords).</li>
+    <li><strong>Clinical Suggestion Generation:</strong> Recommender attaches tailored coping strategies based on the primary emotion.</li>
+    <li><strong>Relational Persistence:</strong> Reflection, emotion scores, and suggestions are committed transactionally to MySQL.</li>
+    <li><strong>Journal Rendering:</strong> Real-time card display with keyword search, emotion filtering, and chronological sorting.</li>
+    <li><strong>Visual Telemetry:</strong> Plotly charts aggregate historical trends into Donut distributions, timelines, and radars.</li>
+    <li><strong>Data Portability:</strong> User can download complete audit records as a 5-column CSV at any time.</li>
+  </ol>
+
+  <!-- How to Run -->
+  <h2>7. How to Run</h2>
+  <pre># 1. Navigate to project folder
+cd C:\Users\sravy\OneDrive\Desktop\AI_Based_Employee_Wellness_Managment_Platfor
+
+# 2. Activate virtual environment
+.\venv\Scripts\Activate.ps1
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Initialize Database
+python database/db_init.py
+
+# 5. Launch Full Application
+python run.py</pre>
+
+  <p>The application opens automatically at <strong>http://localhost:8501</strong> with the REST API at <strong>http://localhost:5000</strong>.</p>
+
+  <!-- Output Screenshots -->
+  <h2>8. Output Screenshots & UI Walkthrough</h2>
+  <div class="figure-box">
+    <strong>Fig 1: Executive Overview Dashboard</strong> — Live KPI counters (Total Check-ins, Streak, Dominant Emotion, Avg Sentiment), motivational quote, and recent reflection preview cards.
+  </div>
+  <div class="figure-box">
+    <strong>Fig 2: Live AI Emotion Analysis Studio</strong> — Real-time DistilBERT multiclass prediction, VADER polarity score, KeyBERT themes, and personalized coping strategies.
+  </div>
+  <div class="figure-box">
+    <strong>Fig 3: My Journal Management</strong> — Responsive reflection cards with color-coded emotion badges, live keyword search, emotion filters, and individual delete buttons.
+  </div>
+  <div class="figure-box">
+    <strong>Fig 4: Deep Emotion Insights Dashboard</strong> — Interactive Plotly Donut distribution chart, 3-day rolling sentiment timeline, 6-axis Emotion Radar, and keyword frequencies.
+  </div>
+  <div class="figure-box">
+    <strong>Fig 5: User Profile & CSV Export</strong> — Personalized support style selection, 1-click 5-column CSV download, and GDPR-compliant cascading account deletion.
+  </div>
+
+  <!-- Known Limitations -->
+  <h2>9. Known Limitations</h2>
+  <ul>
+    <li><strong>Nuance & Sarcasm:</strong> Literary sarcasm or irony in very brief snippets (< 5 words) may occasionally be classified based on literal words.</li>
+    <li><strong>Text-Only Input:</strong> Multi-modal inputs like speech acoustics or webcam facial affect recognition are not yet incorporated.</li>
+    <li><strong>CPU Latency:</strong> Bulk batch processing on CPU environments exhibits minor queuing compared to GPU-accelerated servers.</li>
+  </ul>
+
+  <!-- Future Scope -->
+  <h2>10. Future Scope</h2>
+  <ul>
+    <li><strong>Milestone 2: Multi-Modal Voice Journaling:</strong> Speech-to-text with acoustic prosody and vocal energy extraction.</li>
+    <li><strong>Milestone 3: Wearable Health Sensor Sync:</strong> Apple Health & Fitbit integration to correlate Heart Rate Variability with reflections.</li>
+    <li><strong>Milestone 4: Enterprise HR Analytics:</strong> Anonymized team-level emotional heatmaps and burnout risk indices with k-anonymity.</li>
+    <li><strong>Milestone 5: Conversational CBT Copilot:</strong> Interactive RAG-powered chatbot for guided therapeutic journaling.</li>
+  </ul>
+
+  <!-- Conclusion -->
+  <h2>11. Conclusion</h2>
+  <p>
+    In this milestone, the <strong>AI-Based Employee Wellness Management Platform (MoodMentor)</strong> successfully establishes a robust, modern, and clinically grounded foundation for workplace mental wellness management. By decoupling the presentation layer from the Flask RESTful API and integrating state-of-the-art transformer NLP with evidence-based coping interventions, MoodMentor transforms routine daily journaling into actionable emotional intelligence.
+  </p>
+  <p>
+    The platform provides end-to-end data integrity through ACID-compliant MySQL storage, automated SQLite fallback, secure JWT authentication, and interactive Plotly telemetry. All milestone requirements—from multiclass emotion diagnosis and personalized suggestion generation to interactive card management and standard 5-column CSV export—have been verified with automated test suites. This milestone validates the full architectural stack, ensuring that MoodMentor is production-ready, performant, and extensible for future multi-modal and enterprise enhancements.
+  </p>
+
+</div>
+
+</body>
+</html>

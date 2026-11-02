@@ -1,0 +1,44 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Environment Variables & Secrets (Keep confidential!)
+.env
+.env.local
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+
+# Instance and SQLite database files
+instance/
+*.db
+*.sqlite
+*.sqlite3
+
+# Large Model Weights (>100MB cannot be pushed to standard GitHub)
+*.safetensors
+*.bin
+models/ekman_distilbert/checkpoint-*
+models/ekman_distilbert/model.safetensors
+
+# HuggingFace & dataset cache
+.cache/
+data/go_emotions_ekman/*.parquet
+
+# Streamlit local credentials
+.streamlit/secrets.toml
+
+# IDE settings
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db

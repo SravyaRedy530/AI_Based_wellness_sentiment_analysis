@@ -1,0 +1,18 @@
+{
+  "base_model": "distilbert-base-uncased",
+  "epochs": 2,
+  "best_epoch": 2,
+  "val_accuracy": 0.58,
+  "val_macro_f1": 0.3351,
+  "val_loss": 1.1702,
+  "labels": {
+    "0": "anger",
+    "1": "disgust",
+    "2": "fear",
+    "3": "joy",
+    "4": "sadness",
+    "5": "surprise",
+    "6": "neutral"
+  },
+  "trained_at": "2026-11-02 17:41:14"
+}
